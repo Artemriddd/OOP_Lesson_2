@@ -6,41 +6,61 @@ using System.Threading.Tasks;
 
 namespace Ex_1
 {
-    internal class Check
+    public enum Type { Wife, Husband };
+    public class Check
     {
-        public static int _Number;
-        private int _Balance;
-        public enum _Type { Wife, Husband };
+        public static int _number;
+        private int _balance;
+        private Type _type;
+        public Check()
+        {
+            newNumber();
+            _balance = 1000;
+            PrintType(Type.Wife);
 
-        public void PrintType(_Type type)
+        }
+        public Check(int balance)
+        {
+            newNumber();
+            _balance = balance;
+        }
+        public Check(Type type)
+        {
+            newNumber();
+            this._type = type;
+            _balance = 20000;
+        }
+        public Check(Type type, int balance)
+        {
+            newNumber();
+            this._type = type;
+            _balance = balance;
+        }
+       
+        
+        public void PrintType(Type type)
         {
             switch (type)
             {
-                case _Type.Husband:
+                case Type.Husband:
                     Console.WriteLine("Счет мужа");
                     break;
-                case _Type.Wife:
+                case Type.Wife:
                     Console.WriteLine("Счет жены");
                     break;
             }
         }
-
         public static void newNumber()
         {
-            _Number++;
-
+            _number++;
         }
         public int getNumber()
         {
-            return _Number;
-        }
-        public void setBalance(int n)
-        {
-            _Balance = n;
+            return _number;
         }
         public int getBalance()
         {
-            return _Balance;
+            return _balance;
         }
     }
 }
