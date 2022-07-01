@@ -8,7 +8,7 @@ namespace Ex_1
 {
     internal class Check
     {
-        private int _Number;
+        public static int _Number;
         private int _Balance;
         public enum _Type { Wife, Husband };
 
@@ -25,9 +25,10 @@ namespace Ex_1
             }
         }
 
-        public void setNumber(int n)
+        public static void newNumber()
         {
-            _Number = n;
+            _Number++;
+
         }
         public int getNumber()
         {
