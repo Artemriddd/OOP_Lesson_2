@@ -10,6 +10,23 @@ namespace Ex_1
     {
         static void Main(string[] args)
         {
+            Check checkOne = new Check();
+            checkOne.balance = 100;
+            checkOne.number = 1;
+            checkOne.type = Type.Husband;
+            checkOne.PrintType(checkOne.type);
+            Console.WriteLine($"Баланс = {checkOne.balance} рублей");
+            Console.WriteLine($"Номер счета: {checkOne.number}\n");
+            checkOne.AddMoney(1000);
+            Console.WriteLine($"Баланс = {checkOne.balance} рублей\n");
+            checkOne.LostMoney(1000);
+            Console.WriteLine($"Баланс = {checkOne.balance} рублей\n");
+            checkOne.LostMoney(1000);
+            Console.WriteLine($"Баланс = {checkOne.balance} рублей\n");
+
+            Console.ReadKey(true);
         }
     }
 }
+
+
