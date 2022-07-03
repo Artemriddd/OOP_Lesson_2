@@ -10,25 +10,21 @@ namespace Ex_1
     {
         static void Main(string[] args)
         {
-            Check checkDefault = new Check();
-            Console.Write("Номер счета: ");
-            Console.WriteLine(checkDefault.getNumber());
-            Console.WriteLine("Баланс на счету: {0} рублей\n", checkDefault.getBalance());
+            Check checkOne = new Check();
+            checkOne.balance = 100;
+            checkOne.number = 1;
+            checkOne.type = Type.Husband;
+            checkOne.PrintType(checkOne.type);
+            Console.WriteLine($"Баланс = {checkOne.balance} рублей");
+            Console.WriteLine($"Номер счета: {checkOne.number}\n");
 
-            Check checkOverLoad1 = new Check(100);
-            checkOverLoad1.PrintType(Type.Husband);
-            Console.Write("Номер счета: ");
-            Console.WriteLine(checkOverLoad1.getNumber());
-            Console.WriteLine("Баланс на счету: {0} рублей\n", checkOverLoad1.getBalance());
-
-
-            Check checkOverLoad2 = new Check(Type.Husband,2000);
-            checkOverLoad2.PrintType(Type.Husband);
-            Console.Write("Номер счета: ");
-            Console.WriteLine(checkOverLoad2.getNumber());
-            Console.WriteLine("Баланс на счету: {0} рублей\n", checkOverLoad2.getBalance());
- 
-
+            Check checkTwo = new Check();
+            checkTwo.balance = 2000;
+            checkTwo.number = 2;
+            checkTwo.type = Type.Wife;
+            checkOne.PrintType(checkTwo.type);
+            Console.WriteLine($"Баланс = {checkTwo.balance} рублей");
+            Console.WriteLine($"Номер счета: {checkTwo.number}\n");
 
             Console.ReadKey(true);
         }

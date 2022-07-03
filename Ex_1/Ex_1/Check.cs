@@ -9,35 +9,44 @@ namespace Ex_1
     public enum Type { Wife, Husband };
     public class Check
     {
-        public static int _number;
+        private int _number;
         private int _balance;
         private Type _type;
-        public Check()
-        {
-            newNumber();
-            _balance = 1000;
-            PrintType(Type.Wife);
 
-        }
-        public Check(int balance)
+        public int number
         {
-            newNumber();
-            _balance = balance;
+            get
+            {
+                return _number;
+            }
+            set
+            {
+                _number = value;
+            }
         }
-        public Check(Type type)
+        public int balance
         {
-            newNumber();
-            this._type = type;
-            _balance = 20000;
+            get
+            {
+                return _balance;
+            }
+            set
+            {
+                _balance = value;
+            }
         }
-        public Check(Type type, int balance)
+        public Type type
         {
-            newNumber();
-            this._type = type;
-            _balance = balance;
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                _type = value;
+            }
         }
-       
-        
+
         public void PrintType(Type type)
         {
             switch (type)
@@ -50,17 +59,6 @@ namespace Ex_1
                     break;
             }
         }
-        public static void newNumber()
-        {
-            _number++;
-        }
-        public int getNumber()
-        {
-            return _number;
-        }
-        public int getBalance()
-        {
-            return _balance;
-        }
+
     }
 }
