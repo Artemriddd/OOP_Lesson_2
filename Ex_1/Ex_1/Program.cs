@@ -17,14 +17,12 @@ namespace Ex_1
             checkOne.PrintType(checkOne.type);
             Console.WriteLine($"Баланс = {checkOne.balance} рублей");
             Console.WriteLine($"Номер счета: {checkOne.number}\n");
-
-            Check checkTwo = new Check();
-            checkTwo.balance = 2000;
-            checkTwo.number = 2;
-            checkTwo.type = Type.Wife;
-            checkOne.PrintType(checkTwo.type);
-            Console.WriteLine($"Баланс = {checkTwo.balance} рублей");
-            Console.WriteLine($"Номер счета: {checkTwo.number}\n");
+            checkOne.AddMoney(1000);
+            Console.WriteLine($"Баланс = {checkOne.balance} рублей\n");
+            checkOne.LostMoney(1000);
+            Console.WriteLine($"Баланс = {checkOne.balance} рублей\n");
+            checkOne.LostMoney(1000);
+            Console.WriteLine($"Баланс = {checkOne.balance} рублей\n");
 
             Console.ReadKey(true);
         }

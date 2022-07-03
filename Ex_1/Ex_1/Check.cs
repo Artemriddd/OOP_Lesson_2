@@ -10,7 +10,7 @@ namespace Ex_1
     public class Check
     {
         private int _number;
-        private int _balance;
+        private decimal _balance;
         private Type _type;
 
         public int number
@@ -24,7 +24,7 @@ namespace Ex_1
                 _number = value;
             }
         }
-        public int balance
+        public decimal balance
         {
             get
             {
@@ -57,6 +57,25 @@ namespace Ex_1
                 case Type.Wife:
                     Console.WriteLine("Счет жены");
                     break;
+            }
+        }
+
+        public void AddMoney(decimal money)
+        {
+            Console.WriteLine($"Пополнение баланса на {money} рублей");
+            balance += money;
+        }
+        public void LostMoney(decimal money)
+        {
+            if (balance - money >= 0)
+            {
+                Console.WriteLine($"Покупка на {money} рублей");
+                balance -= money;
+            }
+            else
+            {
+                Console.WriteLine($"Покупка на {money} рублей");
+                Console.WriteLine("Недостаточно средств");
             }
         }
 
